@@ -98,7 +98,7 @@ private class FlowSummaries extends SummaryModelCsv {
         "org.springframework.web.util;DefaultUriBuilderFactory;false;expand;(String,Map);;MapValue of Argument[1];ReturnValue;taint",
         "org.springframework.web.util;DefaultUriBuilderFactory;false;expand;(String,Object[]);;ArrayElement of Argument[1];ReturnValue;taint",
         "org.springframework.web.util;DefaultUriBuilderFactory;false;getDefaultUriVariables;;;Argument[-1];MapValue of ReturnValue;taint",
-        "org.springframework.web.util;DefaultUriBuilderFactory;false;setDefaultUriVariables;;;MapValue of Argument[0];Argument[-1];ReturnValue;taint",
+        "org.springframework.web.util;DefaultUriBuilderFactory;false;setDefaultUriVariables;;;MapValue of Argument[0];Argument[-1];taint",
         "org.springframework.web.util;DefaultUriBuilderFactory;false;uriString;;;Argument[-1];ReturnValue;taint",
         // note for review: I couldn't find any default xss sanitizer definitions so I've assumed I shouldn't model html escape functions for taint
         "org.springframework.web.util;HtmlUtils;false;htmlUnescape;;;Argument[0];ReturnValue;taint",
