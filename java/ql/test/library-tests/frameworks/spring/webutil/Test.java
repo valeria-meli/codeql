@@ -253,6 +253,13 @@ public class Test {
 			sink(getMapValue(out)); // $hasTaintFlow
 		}
 		{
+			// "org.springframework.web.util;DefaultUriBuilderFactory;false;setDefaultUriVariables;;;MapValue of Argument[0];Argument[-1];taint"
+			DefaultUriBuilderFactory out = null;
+			Map in = Map.of(null, source());
+			out.setDefaultUriVariables(in);
+			sink(out); // $ hasTaintFlow
+		}
+		{
 			// "org.springframework.web.util;DefaultUriBuilderFactory;false;uriString;;;Argument[-1];ReturnValue;taint"
 			UriBuilder out = null;
 			DefaultUriBuilderFactory in = (DefaultUriBuilderFactory)source();
